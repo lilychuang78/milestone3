@@ -1,0 +1,46 @@
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding-left: 1rem;
+}
+
+.concept-container{
+    background: red;
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+    text-align: center;
+    margin: 5rem auto;
+}
+
+.concept-text{
+    padding-top: 8rem;
+    color: white;
+}
+
+.text-container{
+    margin: 2rem;
+}
+
+p{
+    font-size: 1.3rem;
+    margin: 5rem 2rem;
+    color: black;
+}
+
+.project-container{
+    background:black;
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    text-align: center;
+    margin: 5rem auto;
+}
+
+.project-text{
+    padding-top: 6rem;
+    color: white;
+    font-size: 2.2rem;
+}

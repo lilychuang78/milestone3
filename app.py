@@ -15,7 +15,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-@app.route("/")
+@app.route('/')
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
 @app.route("/get_intents")
 def get_intents():
     intents = mongo.db.intents.find()
