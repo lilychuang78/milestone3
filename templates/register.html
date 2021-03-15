@@ -2,18 +2,18 @@
 {% block content %}
 
 <div class="title-circle">
-    <h5 class="indigo darken-4 title-text">LogIn</h5>
+    <h5 class="indigo darken-4 title-text">Register</h5>
 </div>
 <!--materialize card panel starts-->
     <div class="row">
-        <form class="col s12 m10 offset-m1" method="POST" action="{{url_for('login')}}">
+        <form class="col s12 m10 offset-m1" method="POST" action="{{url_for('register')}}">
             <div class="card">
                 <div class="card-content">
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
                             <div class="input-field col s12">
-                                <i class="material-icons prefix">person</i>
+                                <i class="material-icons prefix">person_add</i>
                                 <input id="username" name="username" type="text" class="validate">
                                 <label for="username">Username</label>
                             </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="material-icons prefix">lock_outline</i>
+                            <i class="material-icons prefix">lock_open</i>
                             <input id="password" name="password" type="password" class="validate">
                             <label for="password">Password</label>
                         </div>
@@ -30,7 +30,7 @@
                 <div class="card-action">
                     <div class="row">
                         <button type="submit" class="col s8 offset-s2 waves-effect waves-light btn indigo darken-4">
-                            Log In
+                            Register
                         </button>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
         </form>
         <div class="row">
             <div class="center-align">
-                <h6>Don't have an account? Register <a href="{{ url_for('register') }}">here</a>.</h6>
+                <h6>Already have an account? Log in <a href="{{ url_for('login') }}">here</a>.</h6>
             </div>
         </div>
     </div>
