@@ -1,3 +1,4 @@
+/*navbar*/
 nav .brand-logo {
     position: absolute;
     color: #fff;
@@ -6,6 +7,7 @@ nav .brand-logo {
     padding-left: 1rem;
 }
 
+/*home*/
 .concept-container{
     background: red;
     border-radius: 50%;
@@ -27,7 +29,6 @@ nav .brand-logo {
 p{
     font-size: 1.3rem;
     margin: 5rem 2rem;
-    color: black;
 }
 
 .project-container{
@@ -43,4 +44,18 @@ p{
     padding-top: 6rem;
     color: white;
     font-size: 2.2rem;
+}
+
+/*login*/
+.title-circle{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+    border: 1px black solid;
+    margin: 3rem;
+}
+
+.title-text{
+    margin: 3rem;
+    color:white;
 }
