@@ -23,20 +23,29 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% if session.user %}
+                    <li><a href="{{ url_for('intents') }}">Intents</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    <li><a href="#">Search</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
             </ul>
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}"">Home</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li>
+                <div class="img-container">
+                        <!--https://unsplash.com/photos/Fh3Dtg6QX4Q-->
+                        <img src="static/images/alexa.jpg">
+                </div>
+            </li>
+
+        <li><a href="{{ url_for('home') }}">Home</a></li>
         {% if session.user %}
+            <li><a href="{{ url_for('intents') }}">Intents</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            <li><a href="#">Search</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
         {% endif %}
     </ul>
         <!--Materialize navbar ends here-->
@@ -47,7 +56,7 @@
             {% if messages%}
                 {% for message in messages %}
                     <div class="row flash-message">
-                        <h4 class="center-align">{{ message }}</h4>
+                        <h4 class="left-align"id="flash">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -67,7 +76,7 @@
     {% endblock %}
 </body>
 <footer class="container center-align">
-        <a class="" href="{{ url_for('login') }}">Log In | </a>
-        <a class="" href="{{ url_for('logout') }}">Log Out</a>
+        <a href="{{ url_for('login') }}">Log In | </a>
+        <a href="{{ url_for('logout') }}">Log Out</a>
 </footer>
 </html>

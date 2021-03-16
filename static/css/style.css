@@ -12,6 +12,12 @@ nav .brand-logo {
     padding-left: 1rem;
 }
 
+.img-container img{
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
 /*home*/
 .concept-container{
     background: red;

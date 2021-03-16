@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-
     {% for intent in intents %}
         {{ intent.intent_name }}<br>
         {{ intent.description }}<br>
@@ -11,4 +9,24 @@
         {{ intent.is_implemented }}<br>
     {% endfor %}
 
+<div class="title-circle">
+    <h5 class="indigo darken-4 title-text">Intents</h5>
+</div>
+
+<!--materialize collapsible starts-->
+<ul class="collapsible popout">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+</ul>
+<!--materialize collapsible ends-->
 {% endblock %}
