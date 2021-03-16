@@ -1,5 +1,4 @@
-/*jquery sidenav*/
 $(document).ready(function () {
-    $(".sidenav").sidenav();
+    $(".sidenav").sidenav(); /*jquery sidenav*/
+    $("#flash").fadeOut(3000); /*flash message fade out*/
 });
-
