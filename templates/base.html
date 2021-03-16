@@ -24,15 +24,20 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="#">Search</a></li>
+                {% if session.user %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="#">Search</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
-
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{ url_for('home') }}"">Home</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="#">Search</a></li>
+        {% if session.user %}
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="#">Search</a></li>
+        {% endif %}
     </ul>
         <!--Materialize navbar ends here-->
     </header>
@@ -42,7 +47,7 @@
             {% if messages%}
                 {% for message in messages %}
                     <div class="row flash-message">
-                        <h4 class="indigo darken-4 center-align">{{ message }}</h4>
+                        <h4 class="center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -63,6 +68,6 @@
 </body>
 <footer class="container center-align">
         <a class="" href="{{ url_for('login') }}">Log In | </a>
-        <a class="" href="{{ url_for('home') }}">Log Out</a>
+        <a class="" href="{{ url_for('logout') }}">Log Out</a>
 </footer>
 </html>
