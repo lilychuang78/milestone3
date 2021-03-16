@@ -18,14 +18,11 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route("/home")
+#--------display homepage--------#
 def home():
     return render_template("home.html")
 
-@app.route("/get_intents")
-def get_intents():
-    intents = mongo.db.intents.find()
-    return render_template("intents.html", intents=intents)
-
+#--------log in funtion--------#
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -49,7 +46,7 @@ def login():
 
     return render_template("login.html")
 
-
+#--------register funtion--------#
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -72,17 +69,18 @@ def register():
 
     return render_template("register.html")
 
-
+#--------log out funtion--------#
 @app.route("/logout")
 def logout():
     flash("logged out")
     session.pop("user")
     return redirect(url_for("home"))
 
-
+#--------display intents funtion--------#
 @app.route("/intents")
 def intents():
-    return render_template("intents.html")    
+    intents = list(mongo.db.intents.find())
+    return render_template("intents.html", intents=intents)    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

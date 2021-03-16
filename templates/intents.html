@@ -1,13 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for intent in intents %}
-        {{ intent.intent_name }}<br>
-        {{ intent.description }}<br>
-        {{ intent.example }}<br>
-        {{ intent.enity_name }}<br>
-        {{ intent.entity_value }}<br>
-        {{ intent.is_implemented }}<br>
-    {% endfor %}
+
 
 <div class="title-circle">
     <h5 class="indigo darken-4 title-text">Intents</h5>
@@ -15,18 +8,33 @@
 
 <!--materialize collapsible starts-->
 <ul class="collapsible popout">
+    {% for intent in intents %}
     <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header"><i class="material-icons">expand_more</i>
+            <h6><strong>intent name: </strong>{{ intent.intent_name }}</h6>
+        </div>
+        <div class="collapsible-body">
+            <ul>
+                <li><strong>Description: </strong><br>
+                    {{ intent.description }}
+                </li>
+                <li><strong>Example: </strong><br>
+                    {% for example in intent.examples %}
+                        {{ example }}<br>
+                    {% endfor %}
+                </li>
+                <li><strong>Entity Name: </strong><br>
+                    {{ intent.enity_name }}
+                </li>
+                <li><strong>Entity Value: </strong><br>
+                    {% for value in intent.entity_value %}
+                        {{ value }}<br>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
     </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    {% endfor %}
 </ul>
 <!--materialize collapsible ends-->
 {% endblock %}
