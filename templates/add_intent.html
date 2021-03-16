@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="title-circle">
+    <h6 class="indigo darken-4 title-text">AddIntents</h6>
+</div>
+<div class="row">
+    <form class="col s8 offset-s2">
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">intent name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea"></textarea>
+                <label for="textarea2">description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea3" class="materialize-textarea"></textarea>
+                <label for="textarea3">example utterance</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea4" class="materialize-textarea"></textarea>
+                <label for="textarea4">entity name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea5" class="materialize-textarea"></textarea>
+                <label for="textarea5">entity value</label>
+            </div>
+        </div>
+        <div class="card-action">
+            <div class="row right-align">
+                <button type="submit" class="waves-effect waves-light btn light-blue">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

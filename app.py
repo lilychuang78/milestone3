@@ -82,6 +82,10 @@ def intents():
     intents = list(mongo.db.intents.find())
     return render_template("intents.html", intents=intents)
 
+#--------display intents funtion--------#
+@app.route("/add_intent")
+def add_intent():
+    return render_template("add_intent.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
