@@ -80,7 +80,8 @@ def logout():
 @app.route("/intents")
 def intents():
     intents = list(mongo.db.intents.find())
-    return render_template("intents.html", intents=intents)    
+    return render_template("intents.html", intents=intents)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
