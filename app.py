@@ -100,8 +100,18 @@ def add_intent():
     return render_template("add_intent.html")
 
 #--------edit intents function--------#
-@app.route("/edit_intent/<intent_id>", methods=["GET", "POST"])
+@app.route("/edit_intent/<intent_id>",methods=["GET", "POST"])
 def edit_intent(intent_id):
+    if request.method == "POST":
+        submit ={
+            "intent_name": request.form.get("intent_name"),
+            "description": request.form.get("description"),
+            "examples": request.form.getlist("examples"),
+            "entity_name": request.form.getlist("entity_name"),
+            "entity_value": request.form.getlist("entity_value"),
+        }
+        mongo.db.intents.update({"_id":ObjectId(intent_id)},submit)
+        flash("intent updated")
     intent = mongo.db.intents.find_one({"_id": ObjectId(intent_id)})
     return render_template("edit_intent.html", intent=intent)
 
