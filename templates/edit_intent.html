@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="title-circle">
+    <h6 class="indigo darken-4 title-text">EditIntents</h6>
+</div>
+<div class="row card-panel">
+    <form class="col s8 offset-s2" method="POST" action="{{ url_for('edit_intent', intent_id=intent._id) }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="intent_name" name="intent_name" type="text" class="validate" 
+                minlength="5" maxlength="35" required>
+                <label for="intent_name">intent name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                <label for="description">description</label>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
+                        example utterances</div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <label for="examples">example utterance 1</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <label for="examples">example utterance 2</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <label for="examples">example utterance 3</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <label for="examples">example utterance 4</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <label for="examples">example utterance 5</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <label for="examples">example utterance 6</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <label for="examples">example utterance 7</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <label for="examples">example utterance 8</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <label for="examples">example utterance 9</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <label for="examples">example utterance 10</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
+                        entity name</div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
+                        <label for="entity_name">entity name 1</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
+                        <label for="entity_name">entity name 2</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
+                        <label for="entity_name">entity name 3</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
+                        entity value</div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 1</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 2</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 3</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 4</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 5</label>
+                    </div>
+                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 6</label>
+                    </div>                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 7</label>
+                    </div>                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 8</label>
+                    </div>                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 9</label>
+                    </div>                    <div class="collapsible-body input-field col s12">
+                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
+                        <label for="entity_value">entity value 10</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="card-action">
+            <div class="row right-align">
+                <button type="submit" class="waves-effect waves-light btn light-blue">
+                    <i class="material-icons left">done</i>
+                    Done
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
