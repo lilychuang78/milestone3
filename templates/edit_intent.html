@@ -8,13 +8,16 @@
         <div class="row">
             <div class="input-field col s12">
                 <input id="intent_name" name="intent_name" type="text" class="validate" 
-                minlength="5" maxlength="35" required>
+                minlength="5" maxlength="35" value="{{ intent.intent_name }}" required>
                 <label for="intent_name">intent name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                <textarea id="description" name="description" class="materialize-textarea validate" required>
+                    {{- intent.description -}}
+                </textarea>
+                <!--minus symbol removes white space-->
                 <label for="description">description</label>
             </div>
         </div>
@@ -24,43 +27,63 @@
                     <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
                         example utterances</div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required>
+                                {{- intent.examples[0] -}}
+                            </textarea>
                             <label for="examples">example utterance 1</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required>                               
+                                {{- intent.examples[1] -}}
+                            </textarea>
                             <label for="examples">example utterance 2</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required>
+                                {{- intent.examples[2] -}}
+                            </textarea>
                             <label for="examples">example utterance 3</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required>
+                                {{- intent.examples[3] -}}
+                            </textarea>
                             <label for="examples">example utterance 4</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate" required>
+                                {{- intent.examples[4] -}}
+                            </textarea>
                             <label for="examples">example utterance 5</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate">
+                                {{- intent.examples[5] -}}
+                            </textarea>
                             <label for="examples">example utterance 6</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate">
+                                {{- intent.examples[6] -}}
+                            </textarea>
                             <label for="examples">example utterance 7</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate">
+                                {{- intent.examples[7] -}}
+                            </textarea>
                             <label for="examples">example utterance 8</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate">
+                                {{- intent.examples[8] -}}
+                            </textarea>
                             <label for="examples">example utterance 9</label>
                     </div>
                     <div class="collapsible-body input-field col s12">
-                            <textarea id="examples" name="examples" class="materialize-textarea validate"></textarea>
+                            <textarea id="examples" name="examples" class="materialize-textarea validate">
+                                {{- intent.examples[9] -}}
+                            </textarea>
                             <label for="examples">example utterance 10</label>
                     </div>
                 </li>
@@ -71,18 +94,26 @@
                 <li>
                     <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
                         entity name</div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
-                        <label for="entity_name">entity name 1</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
-                        <label for="entity_name">entity name 2</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35"></textarea>
-                        <label for="entity_name">entity name 3</label>
-                    </div>
+                    {% if intent.entity_name|length %}
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35">
+                                {{- intent.entity_name[0] -}}
+                            </textarea>
+                            <label for="entity_name">entity name 1</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35">
+                                {{- intent.entity_name[1] -}}
+                            </textarea>
+                            <label for="entity_name">entity name 2</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_name" name="entity_name" class="materialize-textarea validate" maxlength="35">
+                                {{- intent.entity_name[2] -}}
+                            </textarea>
+                            <label for="entity_name">entity name 3</label>
+                        </div>
+                    {% endif %}
                 </li>
             </ul>
         </div>
@@ -91,42 +122,68 @@
                 <li>
                     <div class="collapsible-header add_header"><i class="material-icons">expand_more</i>
                         entity value</div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 1</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 2</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 3</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 4</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 5</label>
-                    </div>
-                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 6</label>
-                    </div>                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 7</label>
-                    </div>                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 8</label>
-                    </div>                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 9</label>
-                    </div>                    <div class="collapsible-body input-field col s12">
-                        <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20"></textarea>
-                        <label for="entity_value">entity value 10</label>
-                    </div>
+                    {% if intent.entity_value|length %}
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[0] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 1</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[1] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 2</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[2] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 3</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[3] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 4</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[4] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 5</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[5] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 6</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[6] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 7</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[7] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 8</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[8] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 9</label>
+                        </div>
+                        <div class="collapsible-body input-field col s12">
+                            <textarea id="entity_value" name="entity_value" class="materialize-textarea validate" maxlength="20">
+                                {{- intent.entity_value[9] -}}
+                            </textarea>
+                            <label for="entity_value">entity value 10</label>
+                        </div>
+                    {% endif %}
                 </li>
             </ul>
         </div>

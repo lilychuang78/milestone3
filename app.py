@@ -76,13 +76,13 @@ def logout():
     session.pop("user")
     return redirect(url_for("home"))
 
-#--------display intents funtion--------#
+#--------display intents function--------#
 @app.route("/intents")
 def intents():
     intents = list(mongo.db.intents.find())
     return render_template("intents.html", intents=intents)
 
-#--------display intents funtion--------#
+#--------add intents function--------#
 @app.route("/add_intent", methods=["GET", "POST"])
 def add_intent():
     if request.method == "POST":
@@ -97,7 +97,15 @@ def add_intent():
         flash("intent added")
         return redirect(url_for("intents"))
 
-    return render_template("add_intent.html", intents=intents)
+    return render_template("add_intent.html")
+
+#--------edit intents function--------#
+@app.route("/edit_intent/<intent_id>", methods=["GET", "POST"])
+def edit_intent(intent_id):
+    intent = mongo.db.intents.find_one({"_id": ObjectId(intent_id)})
+    return render_template("edit_intent.html", intent=intent)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
