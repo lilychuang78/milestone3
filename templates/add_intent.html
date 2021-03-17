@@ -3,41 +3,81 @@
 <div class="title-circle">
     <h6 class="indigo darken-4 title-text">AddIntents</h6>
 </div>
-<div class="row">
-    <form class="col s8 offset-s2">
+<div class="row card-panel">
+    <form class="col s8 offset-s2" method="POST" action="{{ url_for('add_intent') }}">
         <div class="row">
-            <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">intent name</label>
+            <div class="input-field col s10">
+                <input id="intent_name" name="intent_name" type="text" class="validate" 
+                minlength="5" maxlength="35" required>
+                <label for="intent_name">intent name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="textarea2" class="materialize-textarea"></textarea>
-                <label for="textarea2">description</label>
+                <textarea id="description" name="description" class="materialize-textarea validate" required></textarea>
+                <label for="description">description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s10">
+                <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                <label for="examples">example utterance</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                <label for="examples">example utterance</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                <label for="examples">example utterance</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                <label for="examples">example utterance</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="examples" name="examples" class="materialize-textarea validate" required></textarea>
+                <label for="examples">example utterance</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="textarea3" class="materialize-textarea"></textarea>
-                <label for="textarea3">example utterance</label>
+                <textarea id="enity_name" name="enity_name" class="materialize-textarea validate"
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_name">entity name</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-                <textarea id="textarea4" class="materialize-textarea"></textarea>
-                <label for="textarea4">entity name</label>
+            <div class="input-field col s10">
+                <textarea id="enity_value" name="enity_value" class="materialize-textarea validate" 
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_value">entity value</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="textarea5" class="materialize-textarea"></textarea>
-                <label for="textarea5">entity value</label>
+            <div class="input-field col s10">
+                <textarea id="enity_value" name="enity_value" class="materialize-textarea validate" 
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_value">entity value</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="enity_value" name="enity_value" class="materialize-textarea validate" 
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_value">entity value</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="enity_value" name="enity_value" class="materialize-textarea validate" 
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_value">entity value</label>
+            </div>
+            <div class="input-field col s10">
+                <textarea id="enity_value" name="enity_value" class="materialize-textarea validate" 
+                minlength="5" maxlength="35"></textarea>
+                <label for="enity_value">entity value</label>
             </div>
         </div>
         <div class="card-action">
             <div class="row right-align">
                 <button type="submit" class="waves-effect waves-light btn light-blue">
+                    <i class="material-icons left">add_circle_outline</i>
                     Submit
                 </button>
             </div>

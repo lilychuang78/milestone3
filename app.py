@@ -83,9 +83,23 @@ def intents():
     return render_template("intents.html", intents=intents)
 
 #--------display intents funtion--------#
-@app.route("/add_intent")
+@app.route("/add_intent", methods=["GET", "POST"])
 def add_intent():
-    return render_template("add_intent.html")
+    if request.method == "POST":
+        intent ={
+            "intent_name": request.form.get("intent_name"),
+            "description": request.form.get("description"),
+            "examples": request.form.getlist("examples"),
+            "entity_name": request.form.getlist("entity_name"),
+            "entity_value": request.form.getlist("entity_value"),
+            "created_by": session["user"]
+        }
+        mongo.db.intents.insert_one(intent)
+        flash("intent added")
+        return redirect(url_for("add_intent"))
+
+    intents = mongo.db.intents.find().sort("intent_name",1)
+    return render_template("add_intent.html", intents=intents)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

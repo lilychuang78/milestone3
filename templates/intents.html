@@ -36,13 +36,16 @@
                     {% endfor %}
                 </li>
                 <li><strong>Entity Name: </strong><br>
-                    {{ intent.enity_name }}
+                    {% for name in intent.entity_name %}
+                        {{ name }}<br>
+                    {% endfor %}
                 </li>
                 <li><strong>Entity Value: </strong><br>
                     {% for value in intent.entity_value %}
                         {{ value }}<br>
                     {% endfor %}
                 </li>
+                <li>by { intent.created_by }</li>
             </ul>
         </div>
     </li>
