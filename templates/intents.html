@@ -31,18 +31,24 @@
                     {{ intent.description }}
                 </li>
                 <li><strong>Example: </strong><br>
-                    {% for example in intent.examples %}
-                        {{ example }}<br>
-                    {% endfor %}
+                        {% for example in intent.examples %}
+                            {% if example|length %}
+                                {{ example }}<br>
+                            {% endif %}
+                        {% endfor %}
                 </li>
                 <li><strong>Entity Name: </strong><br>
                     {% for name in intent.entity_name %}
-                        {{ name }}<br>
+                        {% if name|length %}
+                            {{ name }}<br>
+                        {% endif %}
                     {% endfor %}
                 </li>
                 <li><strong>Entity Value: </strong><br>
                     {% for value in intent.entity_value %}
-                        {{ value }}<br>
+                        {% if value|length %}
+                            {{ value }}<br>
+                        {% endif %}
                     {% endfor %}
                 </li>
                 <div class="center-align">
