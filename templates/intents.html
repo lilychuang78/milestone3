@@ -57,7 +57,10 @@
                         Edit
                     </a>
                     {% if session.user|lower == "admin"|lower %}
-                        <a class="waves-effect waves-light btn-small"><i class="material-icons left">delete_forever</i>Delete</a>
+                        <a href="{{ url_for('delete_intent', intent_id=intent._id) }}" class="waves-effect waves-light btn-small">
+                            <i class="material-icons left">delete_forever</i>
+                            Delete
+                        </a>
                     {% endif %}
                 </div>
             </ul>

@@ -99,7 +99,7 @@ def add_intent():
 
     return render_template("add_intent.html")
 
-#--------edit intents function--------#
+#--------edit intent function--------#
 @app.route("/edit_intent/<intent_id>",methods=["GET", "POST"])
 def edit_intent(intent_id):
     if request.method == "POST":
@@ -115,6 +115,12 @@ def edit_intent(intent_id):
     intent = mongo.db.intents.find_one({"_id": ObjectId(intent_id)})
     return render_template("edit_intent.html", intent=intent)
 
+#--------delete intent function--------#
+@app.route("/delete_intent/<intent_id>")
+def delete_intent(intent_id):
+    mongo.db.intents.remove({"_id":ObjectId(intent_id)})
+    flash("intent deleted")
+    return redirect(url_for('intents'))
 
 
 if __name__ == "__main__":
