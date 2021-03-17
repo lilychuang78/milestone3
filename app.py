@@ -92,13 +92,11 @@ def add_intent():
             "examples": request.form.getlist("examples"),
             "entity_name": request.form.getlist("entity_name"),
             "entity_value": request.form.getlist("entity_value"),
-            "created_by": session["user"]
         }
         mongo.db.intents.insert_one(intent)
         flash("intent added")
-        return redirect(url_for("add_intent"))
+        return redirect(url_for("intents"))
 
-    intents = mongo.db.intents.find().sort("intent_name",1)
     return render_template("add_intent.html", intents=intents)
 
 if __name__ == "__main__":

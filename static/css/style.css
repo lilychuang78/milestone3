@@ -67,6 +67,7 @@ p{
 }
 
 .title-text{
+    line-height: 2rem;
     margin: 4rem 2rem;
     color:white;
 }
@@ -75,4 +76,40 @@ p{
 strong{
     color: #1a237e;
     font-weight: 700;
+}
+
+/*add intent*/
+.add_header{
+    color: grey;
+}
+
+
+element.style {
+}
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+.row .col {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 .75rem;
+    min-height: 1px;
+}
+.input-field {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+element.style {
+}
+.add_header {
+    color: grey;
+}
+.collapsible-body {
+    border-bottom: none;
 }
