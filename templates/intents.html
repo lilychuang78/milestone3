@@ -59,12 +59,12 @@
                     </a>
                     <!--only allows admin to delete-->
                     {% if session.user|lower == "admin"|lower %}
-                        <a href="#{{intent._id }}" class="waves-effect waves-light btn-small modal-trigger">
+                        <a href="#a{{intent._id }}" class="waves-effect waves-light btn-small modal-trigger">
                             <i class="material-icons left">delete_forever</i>
                             Delete
                         </a>
                         <!--pop up windows to confirm deletion-->
-                        <div id="{{intent._id }}" class="modal">
+                        <div id="a{{intent._id }}" class="modal">
                             <div class="modal-content">
                                 <p>Are you sure you want to delete this intent?</p>
                             </div>
