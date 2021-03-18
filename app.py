@@ -82,6 +82,13 @@ def intents():
     intents = list(mongo.db.intents.find())
     return render_template("intents.html", intents=intents)
 
+#--------search intent function--------#
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    intents = list(mongo.db.intents.find({"$text":{"$search":query}}))
+    return render_template("intents.html", intents=intents)
+
 #--------add intents function--------#
 @app.route("/add_intent", methods=["GET", "POST"])
 def add_intent():
@@ -121,7 +128,6 @@ def delete_intent(intent_id):
     mongo.db.intents.remove({"_id":ObjectId(intent_id)})
     flash("intent deleted")
     return redirect(url_for('intents'))
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -40,6 +40,9 @@ nav .brand-logo {
     padding: 0.2rem;
 }
 
+.waves-effect{
+    overflow: visible;
+}
 
 /*home*/
 .concept-container{
