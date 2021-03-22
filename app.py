@@ -129,11 +129,11 @@ def delete_intent(intent_id):
     flash("intent deleted")
     return redirect(url_for('intents'))
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("page-not-found.html"),404
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True) #change to False when submitting project
-
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template("page-not-found.html"),404

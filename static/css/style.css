@@ -138,3 +138,7 @@ strong{
 .collapsible-body {
     border-bottom: none;
 }
+
+.not-found{
+    margin: 1rem;
+}

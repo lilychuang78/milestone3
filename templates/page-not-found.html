@@ -1,5 +1,12 @@
 {% extends "base.html"%}
 {% block content %}
-    <h2 class="center-align container">404</h2>
+<div class="card">
+    <div class="center-align col s8 offset-s2">
+        <h2>Oops, 4<i class="material-icons">face</i>4</h2>
+        <a class="btn not-found" href="{{ url_for('home') }}">
+            Go Home
+        </a>
+    </div>
+</div>
 {% endblock %}
 
