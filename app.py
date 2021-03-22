@@ -46,28 +46,28 @@ def login():
 
     return render_template("login.html")
 
-#--------register funtion--------#
+#--------register funtion on login page--------#
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+        existing_user1 = mongo.db.users.find_one(
+            {"username1": request.form.get("username1").lower()})
 
-        if existing_user:
+        if existing_user1:
             flash("already registered")
-            return redirect(url_for("register"))
+            return redirect(url_for("login"))
 
         register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "username1": request.form.get("username1").lower(),
+            "password1": generate_password_hash(request.form.get("password1"))
         }
         mongo.db.users.insert_one(register)
 
-        session["user"] = request.form.get("username").lower()
+        session["user"] = request.form.get("username1").lower()
         flash("you are now registered")
-        return redirect(url_for("home", username=session["user"]))
+        return redirect(url_for("home", username1=session["user"]))
 
-    return render_template("register.html")
+    return redirect(url_for("register"))
 
 #--------log out funtion--------#
 @app.route("/logout")

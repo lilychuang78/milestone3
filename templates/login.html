@@ -1,47 +1,72 @@
 {% extends "base.html"%}
 {% block content %}
-
 <div class="title-circle">
-    <h5 class="indigo darken-4 title-text">LogIn</h5>
+	<h5 class="indigo darken-4 title-text">LogIn</h5> </div>
+<div class="row">
+    <!-- LOGIN FORM -->
+	<form class="col s12 m10 offset-m1" method="POST" action="{{url_for('login')}}">
+		<div class="card">
+			<div class="card-content">
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12"> <i class="material-icons prefix">person</i>
+								<input id="username" name="username" type="text" class="validate">
+								<label for="username">Username</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12"> <i class="material-icons prefix">lock_outline</i>
+						<input id="password" name="password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+				</div>
+			</div>
+			<div class="card-action">
+				<div class="row">
+					<button type="submit" class="col s8 offset-s2 waves-effect waves-light btn indigo darken-4"> Log In </button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="center-align">
+					<h6>Don't have an account?</h6> <a class="waves-effect waves-teal btn-flat" onclick="$('.tap-target').tapTarget('open')">Register</a>
+					<div class="fixed-action-btn register-icon">
+						<a id="register-btn" class="btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')"> <i class="material-icons">person_add</i> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </form>
+<!-- Tap Target Structure -->
+<div class="tap-target" data-target="register-btn">
+	<div class="tap-target-content">
+		<div class="row">
+			<!-- REGISTER FORM -->
+			<form class="col s12 m10 offset-m1" method="POST" action="{{url_for('register')}}">
+				<div class="row">
+					<div class="col s12  right-align">
+						<div class="input-field col s6"> <i class="material-icons prefix">person_add</i>
+							<input id="username1" name="username1" type="text" class="validate">
+							<label for="username1">Username</label>
+						</div>
+						<div class="input-field col s6"> <i class="material-icons prefix">lock_open</i>
+							<input id="password1" name="password1" type="password" class="validate">
+							<label for="password1">Password</label>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<div class="row">
+						<button type="submit" class="col s6 offset-s3 waves-effect waves-light btn indigo darken-4"> Register </button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- End Tap Target Structure -->
 </div>
-<!--materialize card panel starts-->
-    <div class="row">
-        <form class="col s12 m10 offset-m1" method="POST" action="{{url_for('login')}}">
-            <div class="card">
-                <div class="card-content">
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">person</i>
-                                <input id="username" name="username" type="text" class="validate">
-                                <label for="username">Username</label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">lock_outline</i>
-                            <input id="password" name="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-action">
-                    <div class="row">
-                        <button type="submit" class="col s8 offset-s2 waves-effect waves-light btn indigo darken-4">
-                            Log In
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div class="row">
-            <div class="center-align">
-                <h6>Don't have an account? Register <a href="{{ url_for('register') }}">here</a>.</h6>
-            </div>
-        </div>
-    </div>
-<!--materialize card panel ends-->
-
+{% endblock %}
+{% block scripts %}
 {% endblock %}

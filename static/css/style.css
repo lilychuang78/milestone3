@@ -83,6 +83,25 @@ p{
     font-size: 2.2rem;
 }
 
+/*login*/
+.tap-target{
+    background-color: azure;
+}
+
+.tap-target-content{
+    height: 32rem !important;
+    width: 34rem !important;
+}
+
+.register-icon{
+    bottom: 2.5rem;
+    right: 3rem;
+}
+
+.card .card-action{
+    border-top: hidden;
+}
+
 /*intents*/
 strong{
     color: #1a237e;
@@ -94,9 +113,6 @@ strong{
     color: grey;
 }
 
-
-element.style {
-}
 .row .col.s12 {
     width: 100%;
     margin-left: auto;
@@ -116,8 +132,6 @@ element.style {
     margin-bottom: 1rem;
 }
 
-element.style {
-}
 .add_header {
     color: grey;
 }
