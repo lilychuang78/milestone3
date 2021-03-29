@@ -10,7 +10,7 @@ Users should already have knowledge and experiences of NLU development,
 for instance working on one's own NLU project or in a company project; 
 and hence only a brief explaination about NLU is stated on the homepage.</br>
 The data is stored in MongoDB database and can be simply retrieve and send through the frontend user interface.<br/>
-At the moment, only the administrator (login as "admin") can delete the data. Pease register as "<strong>admin</strong>" with a password of your choice for milestone project accessment.
+At the moment, only the administrator (login as "admin") can delete the data. <strong>Pease register as "admin" with a password of your choice for milestone project accessment.</strong>
 The website is responsive and the users can navigate through the website in desktop and mobile devices.
 
 ## User Stories
@@ -29,7 +29,7 @@ The website is responsive and the users can navigate through the website in desk
 <img src="static/images/alexa.jpg" alt="alexa device" width=30% height="30%">
 
 2. Geometry of circles and rectangles (card-panels) are used through out the website to convey a simple impression.
-3. Blue and green colors (<strong style="color:#1a237e">indigo darken-4</strong>, <strong style="color:#03a9f4">light-blue</strong>, and <strong style="color:#26a69a">teal lighten-1</strong>) are used through out the website and can be found in [materialize.css](https://materializecss.com/color.html) are used. Only one color of <strong style="color:red">red</strong> is used on the home page to catch user's attention.
+3. Blue and green colors of #1a237e, #03a9f4", and #26a69a ("indigo darken-4", "light-blue", and "teal lighten-1" as [materialize.css](https://materializecss.com/color.html) class respectively) are used through out the website. Only one color of #FF0000(red) is used on the home page to catch user's attention.
 
 
 ## Wireframe
@@ -37,7 +37,7 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
 
 ## Features
 1. Navigation bar
-    - it can be found on the top of the screen, when in mobile view, the navigation bar becomes mobile slide navbar hamburger menu on the left top of the screen. When the user clicks on the hamburger menu icon, a menu slides and appears from the left side of the screen.</br>
+    - It can be found on the top of the screen, when in mobile view, the navigation bar becomes mobile slide navbar hamburger menu on the left top of the screen. When the user clicks on the hamburger menu icon, a menu slides and appears from the left side of the screen.</br>
     <img src="readme-images/mobile-slide-navbar.jpg" alt="slided navbar" width=50% height="50%"></br>
 
     - Before login, users can only see "Home" and "Log In" on the navigation bar.
@@ -172,12 +172,15 @@ Testing details can be found [here](testing.md).
 ## Database
 1. Log into MongoDB, click on "Create Database".
 2. Enter database name and collection name.
-<img src="readme-images/create-database.jpg" alt="create database" width=50% height="50%"></br>
+<img src="readme-images/create-database.jpg" alt="create database" width=30% height="30%">
+
 3. Enter the collection and click on "INSERT DOCUMENT" to insert the initial data.
 4. To connect the web application, click on "CONNECT" inside "SANDBOX".
-<img src="readme-images/sandbox-connect.jpg" alt="connect sandbox" width=50% height="50%"></br>
+<img src="readme-images/sandbox-connect.jpg" alt="connect sandbox" width=30% height="30%">
+
 5. Click on "Connect your application".</br>
-<img src="readme-images/connect-application.jpg" alt="connect your application" width=50% height="50%"></br>
+<img src="readme-images/connect-application.jpg" alt="connect your application" width=50% height="50%">
+
 6. Select DRIVER and VERSION.
 7. Replace the password placeholder in the connection string and copy to the environment file.</br>
    mongodb+srv://lilychuang78:<password>@myfirstcluster.oqsvj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
