@@ -13,7 +13,7 @@
         <div class="row valign-wrapper center-align">
             <i class="material-icons">search</i>
             <div class="input-field col s12">
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <input type="text" name="query" id="query" class="validate" required>
                 <label for="query">keywords</label>
             </div>
             <div class="col">
@@ -37,7 +37,7 @@
                 <li><strong>Description: </strong><br>
                     {{ intent.description }}
                 </li>
-                <li><strong>Example: </strong><br>
+                <li><strong>Example utterances: </strong><br>
                         {% for example in intent.examples %}
                             {% if example|length %}
                                 {{ example }}<br>
