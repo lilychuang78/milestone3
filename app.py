@@ -73,18 +73,19 @@ def register():
 @app.route("/logout")
 def logout():
     """log out funtion"""
-    flash("logged out")
     session.clear()
+    flash("logged out")
     return redirect(url_for("home"))
 
 @app.route("/intents")
 def intents():
     """display funtion"""
-    if "username" in session:
+    if "user" in session:
         intents = list(mongo.db.intents.find())
         return render_template("intents.html", intents=intents)
-    flash('you are not logged in')
-    return redirect(url_for("home"))
+    else:
+        flash('you are not logged in')
+        return redirect(url_for("home"))
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -96,7 +97,7 @@ def search():
 @app.route("/add_intent", methods=["GET", "POST"])
 def add_intent():
     """add intent funtion"""
-    if "username" in session:
+    if "user" in session:
         if request.method == "POST":
             intent ={
                 "intent_name": request.form.get("intent_name"),
