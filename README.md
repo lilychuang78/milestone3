@@ -116,10 +116,15 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
 
     - Users can click on "GO HOME" button to be directed back to the home page.
 
-9. footer
+8. Footer
     - Users can direct to log in page by clicking the log in anchor in the footer.
     - Users can log out by clicking the log out anchor in the footer. 
 
+9. User in session
+    - Users can only see "Intents" and "AddIntents" page when they are logged in the session.
+    - When the users attempt to enter the page directly with the links of http://milestone3-lily.herokuapp.com/intents 
+      and http://milestone3-lily.herokuapp.com/add_intent, the page lands on the home page. A flash message appears to 
+      remind the users "you are not logged in".
 ## Development Tools
 ### Languages
 1. Frontend languages are used through out the website.

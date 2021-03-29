@@ -38,9 +38,13 @@
         - A flash message appears if I entered the wrong username or password.
         - A flash message of greeting also appears if I log in successfully.
     
-    -Log out
+    - Log out
         - I can log out without any issues.
         - A flash message indicates I have logged out appears.
+    
+    - Expired session
+        - When I attempt to access the intent database via the link of http://milestone3-lily.herokuapp.com/intents or http://milestone3-lily.herokuapp.com/add_intent, 
+          the page remains on the homepage or directs to the homepage (if it was on the "Log In" page). I see a flash message of "you are not logged in".
         
     - <strong>CRUD</strong>
         - READ:
@@ -55,6 +59,7 @@
             - When there are several fields under the same key names (example utterances, entity name, and entity value), I can click and expand the multiple fields in order to modify the input.</br>
             <img src="readme-images/edit-intent-before-expansion.jpg" alt="example utterances before expansion" width=30% height="30%">
             <img src="readme-images/edit-intent-after-expansion.jpg" alt="example utterances after expansion" width=30% height="30%">
+
             - I am able to submit the updated intent content by clicking on the "DONE" button. The page remains but with the updated version, so I can decide if there is further modification.
             - I am able to go to the "Intents" page by clicking on the "INTENTS" button.
 
