@@ -50,10 +50,9 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     - If the user has a wrong username or password, a flash message appears to remind the user.
 
 3. Register
-     - If a new user wishes to register an account, one can click on "REGISTER". A register form appers on the right bottom corner.</br>
-    
-        <img src="readme-images/register-button.jpg" alt="reigister button" width=50% height="50%">
-        <img src="readme-images/register-form.jpg" alt="reigister form" width=50% height="50%">
+     - If a new user wishes to register an account, one can click on "REGISTER". A register form appers on the right bottom corner.    
+    <img src="readme-images/register-button.jpg" alt="reigister button" width=50% height="50%">
+    <img src="readme-images/register-form.jpg" alt="reigister form" width=50% height="50%">
     
 
     - If the user already has an account, a flash messages of "already registered" appears to remind the user to log in.
@@ -70,9 +69,8 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     <img src="readme-images/no-result.jpg" alt="no result" width=50% height="50%"></br>
 
     - When user click on the intent name, a card panel pops out to show the details of the data, including description, example, entity name and entity value.
-    
-        <img src="readme-images/intent-name.jpg" alt="intent name" width=50% height="50%">
-        <img src="readme-images/intent-panel.jpg" alt="intent content" width=50% height="50%">
+    <img src="readme-images/intent-name.jpg" alt="intent name" width=50% height="50%">
+    <img src="readme-images/intent-panel.jpg" alt="intent content" width=50% height="50%">
     
     - As users, you can edit the intent by clicking "EDIT" button. However, the "DELETE" button is deactivated.</br>
     <img src="readme-images/user-delete.jpg" alt="delete button for non-admin users" width=50% height="50%"></br>
@@ -181,12 +179,15 @@ Testing details can be found [here](testing.md).
 ## Database
 1. Log into MongoDB, click on "Create Database".
 2. Enter database name and collection name.
-<img src="readme-images/create-database.jpg" alt="create database" width=50% height="50%"></br>
+<img src="readme-images/create-database.jpg" alt="create database" width=50% height="50%">
+
 3. Enter the collection and click on "INSERT DOCUMENT" to insert the initial data.
 4. To connect the web application, click on "CONNECT" inside "SANDBOX".
-<img src="readme-images/sandbox-connect.jpg" alt="connect sandbox" width=50% height="50%"></br>
+<img src="readme-images/sandbox-connect.jpg" alt="connect sandbox" width=50% height="50%">
+
 5. Click on "Connect your application".</br>
-<img src="readme-images/connect-application.jpg" alt="connect your application" width=50% height="50%"></br>
+<img src="readme-images/connect-application.jpg" alt="connect your application" width=50% height="50%">
+
 6. Select DRIVER and VERSION.
 7. Replace the password placeholder in the connection string and copy to the environment file.</br>
    mongodb+srv://lilychuang78:<password>@myfirstcluster.oqsvj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -194,22 +195,22 @@ Testing details can be found [here](testing.md).
 ## Deployment
 1. Log into Heroku, click on the created app called "milestone3-lily".
 2. Go to the "Setting" tab.</br>
-<img src="readme-images/heroku-setting.jpg" alt="Heroku setting tab" width=50% height="50%"></br>
+<img src="readme-images/heroku-setting.jpg" alt="Heroku setting tab" width=50% height="50%">
 
 3. Go to "Config Vars", click on "Reveal Config Vars".</br>
-<img src="readme-images/heroku-reveal-config.jpg" alt="Heroku reveal config" width=50% height="50%"></br>
+<img src="readme-images/heroku-reveal-config.jpg" alt="Heroku reveal config" width=50% height="50%">
 
 4. Enter the respective key and values from env.py in the fileds.</br>
-<img src="readme-images/heroku-config.jpg" alt="Heroku config" width=50% height="50%"></br>
+<img src="readme-images/heroku-config.jpg" alt="Heroku config" width=50% height="50%">
 
 5. Go to "Deploy" tab and select "GitHub" in "Deployment method".</br>
-<img src="readme-images/heroku-connect-github.jpg" alt="Heroku connect to GitHub" width=50% height="50%"></br>
+<img src="readme-images/heroku-connect-github.jpg" alt="Heroku connect to GitHub" width=50% height="50%">
 
 6. In "Manual deploy", select the branch to deploy and click on "Deploy Branch".</br>
-<img src="readme-images/heroku-deploy.jpg" alt="Heroku deploy" width=50% height="50%"></br>
+<img src="readme-images/heroku-deploy.jpg" alt="Heroku deploy" width=50% height="50%">
 
 7. After successfully deployed, one is able to receive the message of "Your app was successfully deployed". Click on "View" to see the deployed website.</br>
-<img src="readme-images/heroku-deploy-success.jpg" alt="Heroku deployed successfully" width=50% height="50%"></br>
+<img src="readme-images/heroku-deploy-success.jpg" alt="Heroku deployed successfully" width=50% height="50%">
 
 
 ## Credit

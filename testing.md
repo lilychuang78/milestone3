@@ -51,6 +51,7 @@
             - I am able to click on the intent name and a window pops out where I can see not only the intent name but aslo the description, example utterances, entity name, and entity value on the "Intents" page.
              - I am able search an intent content by entering the keyword, and click on "SEARCH" button.</br>
             <img src="readme-images/search-keyword.jpg" alt="search a keyword" width=50% height="50%">
+            
             - I am able to reset the keyword search by clicking the "RESET" button, and am directed to the "Intents" page, where a list of intents are displayed.
 
         - EDIT:
