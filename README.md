@@ -116,6 +116,10 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
 
     - Users can click on "GO HOME" button to be directed back to the home page.
 
+9. footer
+    - Users can direct to log in page by clicking the log in anchor in the footer.
+    - Users can log out by clicking the log out anchor in the footer. 
+
 ## Development Tools
 ### Languages
 1. Frontend languages are used through out the website.
