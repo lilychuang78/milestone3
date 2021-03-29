@@ -50,10 +50,10 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        existing_user1 = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one(
             {"username1": request.form.get("username1").lower()})
 
-        if existing_user1:
+        if existing_user:
             flash("already registered")
             return redirect(url_for("login"))
 
