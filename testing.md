@@ -56,7 +56,7 @@
             <img src="readme-images/edit-intent-after-expansion.jpg" alt="example utterances after expansion" width=30% height="30%">
             - I am able to submit the updated intent content by clicking on the "DONE" button. The page remains but with the updated version, so I can decide if there is further modification.
             - I am able to go to the "Intents" page by clicking on the "INTENTS" button.
-        -ADD:
+        - ADD:
             - I am go to add intent content by clicking on "AddIntents" on the navbar.
             - I am able to enter one intent name, description, at least five example utterances, entity name, and entity value in the input fields.
             - When there are several fields under the same key names (example utterances, entity name, and entity value), I can click and expand the multiple fields in order to enter the input.
