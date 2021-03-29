@@ -70,7 +70,7 @@
                             <i class="material-icons left">delete_forever</i>
                             Delete
                         </a>
-                        <!--pop up windows to confirm deletion-->
+                        <!--materialize modal: pop up windows to confirm deletion starts here-->
                         <div id="a{{intent._id }}" class="modal">
                             <div class="modal-content">
                                 <p>Are you sure you want to delete <strong>{{ intent.intent_name }}</strong>?</p>
@@ -84,6 +84,7 @@
                                 </a>
                             </div>
                         </div>
+                        <!--materialize model ends-->
                     {% else %}
                         <a class="btn btn-small disabled">
                                 <i class="material-icons left">delete_forever</i>
