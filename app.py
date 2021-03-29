@@ -18,13 +18,13 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route("/home")
-#--------display homepage--------#
 def home():
+    """display homepage"""
     return render_template("home.html")
 
-#--------log in funtion--------#
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """log in funtion"""
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -46,9 +46,9 @@ def login():
 
     return render_template("login.html")
 
-#--------register funtion on login page--------#
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """register function on login page"""
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username1": request.form.get("username1").lower()})
@@ -69,46 +69,54 @@ def register():
 
     return redirect(url_for("register"))
 
-#--------log out funtion--------#
+
 @app.route("/logout")
 def logout():
+    """log out funtion"""
     flash("logged out")
-    session.pop("user")
+    session.clear()
     return redirect(url_for("home"))
 
-#--------display intents function--------#
 @app.route("/intents")
 def intents():
-    intents = list(mongo.db.intents.find())
-    return render_template("intents.html", intents=intents)
+    """display funtion"""
+    if "username" in session:
+        intents = list(mongo.db.intents.find())
+        return render_template("intents.html", intents=intents)
+    flash('you are not logged in')
+    return redirect(url_for("home"))
 
-#--------search intent function--------#
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """search keyword in intents funtion"""
     query = request.form.get("query")
     intents = list(mongo.db.intents.find({"$text":{"$search":query}}))
     return render_template("intents.html", intents=intents)
 
-#--------add intents function--------#
 @app.route("/add_intent", methods=["GET", "POST"])
 def add_intent():
-    if request.method == "POST":
-        intent ={
-            "intent_name": request.form.get("intent_name"),
-            "description": request.form.get("description"),
-            "examples": request.form.getlist("examples"),
-            "entity_name": request.form.getlist("entity_name"),
-            "entity_value": request.form.getlist("entity_value"),
-        }
-        mongo.db.intents.insert_one(intent)
-        flash("intent added")
-        return redirect(url_for("intents"))
+    """add intent funtion"""
+    if "username" in session:
+        if request.method == "POST":
+            intent ={
+                "intent_name": request.form.get("intent_name"),
+                "description": request.form.get("description"),
+                "examples": request.form.getlist("examples"),
+                "entity_name": request.form.getlist("entity_name"),
+                "entity_value": request.form.getlist("entity_value"),
+            }
+            mongo.db.intents.insert_one(intent)
+            flash("intent added")
+            return redirect(url_for("intents"))
 
-    return render_template("add_intent.html")
+        return render_template("add_intent.html")
+    flash('you are not logged in')
+    return redirect(url_for("home"))
 
-#--------edit intent function--------#
+
 @app.route("/edit_intent/<intent_id>",methods=["GET", "POST"])
 def edit_intent(intent_id):
+    """edit funtion"""
     if request.method == "POST":
         submit ={
             "intent_name": request.form.get("intent_name"),
@@ -122,15 +130,16 @@ def edit_intent(intent_id):
     intent = mongo.db.intents.find_one({"_id": ObjectId(intent_id)})
     return render_template("edit_intent.html", intent=intent)
 
-#--------delete intent function--------#
 @app.route("/delete_intent/<intent_id>")
 def delete_intent(intent_id):
+    """delete intent funtion"""
     mongo.db.intents.remove({"_id":ObjectId(intent_id)})
     flash("intent deleted")
     return redirect(url_for('intents'))
 
 @app.errorhandler(404)
 def page_not_found(error):
+    """display page not found"""
     return render_template("page-not-found.html"),404
 
 if __name__ == "__main__":
