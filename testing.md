@@ -38,7 +38,7 @@
         - A flash message appears if I entered the wrong username or password.
         - A flash message of greeting also appears if I log in successfully.
     
-    -Log out
+    - Log out
         - I can log out without any issues.
         - A flash message indicates I have logged out appears.
         
