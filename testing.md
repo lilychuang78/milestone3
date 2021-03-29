@@ -48,6 +48,7 @@
              - I am able search an intent content by entering the keyword, and click on "SEARCH" button.</br>
             <img src="readme-images/search-keyword.jpg" alt="search a keyword" width=50% height="50%">
             - I am able to reset the keyword search by clicking the "RESET" button, and am directed to the "Intents" page, where a list of intents are displayed.
+
         - EDIT:
             - I am able to edit the intent content by click on the "EDIT" button, and am directed to the "EditIntents" page.
             - I am able to edit the intent content 
@@ -56,11 +57,13 @@
             <img src="readme-images/edit-intent-after-expansion.jpg" alt="example utterances after expansion" width=30% height="30%">
             - I am able to submit the updated intent content by clicking on the "DONE" button. The page remains but with the updated version, so I can decide if there is further modification.
             - I am able to go to the "Intents" page by clicking on the "INTENTS" button.
+
         - ADD:
             - I am go to add intent content by clicking on "AddIntents" on the navbar.
             - I am able to enter one intent name, description, at least five example utterances, entity name, and entity value in the input fields.
             - When there are several fields under the same key names (example utterances, entity name, and entity value), I can click and expand the multiple fields in order to enter the input.
             - After clicking on "SUBMIT" button, the page is directed to "Intents" page with the updated list of intent content.
+        
         - DELETE:
             - As a <strong>admin</strong>, I can click on the "DELETE" button.
             - Before the deletion, I can see a window pops out to double confirm whether I want to delete the selected intent (with the intent name specified).
