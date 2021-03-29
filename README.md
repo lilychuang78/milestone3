@@ -10,7 +10,7 @@ Users should already have knowledge and experiences of NLU development,
 for instance working on one's own NLU project or in a company project; 
 and hence only a brief explaination about NLU is stated on the homepage.</br>
 The data is stored in MongoDB database and can be simply retrieve and send through the frontend user interface.<br/>
-At the moment, only the administrator (login as "admin") can delete the data. Please register as "<strong>admin</strong>" with a password of your choice for milestone project assessment.
+At the moment, only the administrator (login as "admin") can delete the data. <strong>Please register as "admin" with a password of your choice for milestone project assessment!</strong>
 The website is responsive and the users can navigate through the website in desktop and mobile devices.
 
 ## User Stories
