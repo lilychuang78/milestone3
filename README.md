@@ -59,7 +59,7 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     - After register, the page is directed to the home page with a flash messages of "you are now registered".
 
 
-3. Intents
+4. Intents
     - Users can see a list of intents that were saved previously.
     - Users can keywords search the data by typing any keywords without minimal length in the search input field and click on the "SEARCH" button.
     - Users can reset the entered keywords by clicking on the "RESET" button.</br>
@@ -83,7 +83,7 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     
     - After deletion, the page is directed to the "Intents" page with a list of intents except for the one which is just removed.
 
-4. EditIntents
+5. EditIntents
     - Users can edit intents on "EditIntents" with 
         - a mandatory intent name
         - a mandatory description
@@ -94,7 +94,7 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     - A flash message "intent updated" is shown on the same page once the intent is successfully updated.
     - If the users is satisfied with the edition, click on "INTENTS" to go back to the "Intents" page, where the edition is also modified in the list of intents.
 
-5. AddIntents
+6. AddIntents
     - In AddIntents page, a user can each time add
         - a mandatory new intent, which requires minimum five characters to maximum thirty-five characters. 
         - a mandatory description.
@@ -104,25 +104,27 @@ Balsamiq Wireframes was used to create the the skeleton plane, which can be foun
     - Each value in the input fileds is sent and stored to MongoDB database. 
     - After submit by clicking "SUBMIT" button, the page is directed to "Intents" page, where a user can see the updated list of intents, including the one that was just added to the database.
     - A flash message "intent added" is shown on the "Intents" page once the intent is successfully added.
-6. LogOut
+
+7. LogOut
     - Users can logout anytime by clicking on "Log Out" either in the navbar or on the footer.
     - Users are directed to the homepage with a flash message "logged out" once logged one out.
 
-7. Page Not found
+8. Page Not found
     - Page-not-found page is directed when a user is searching for a non-exisiting landing page. </br>
     <img src="readme-images/page-not-found.jpg" alt="page not found" width=50% height="50%"></br>
 
     - Users can click on "GO HOME" button to be directed back to the home page.
 
-8. Footer
+9. Footer
     - Users can direct to log in page by clicking the log in anchor in the footer.
     - Users can log out by clicking the log out anchor in the footer. 
 
-9. User in session
+10. User in session
     - Users can only see "Intents" and "AddIntents" page when they are logged in the session.
-    - When the users attempt to enter the page directly with the links of http://milestone3-lily.herokuapp.com/intents 
-      and http://milestone3-lily.herokuapp.com/add_intent, the page lands on the home page. A flash message appears to 
-      remind the users "you are not logged in".
+    - When the users attempt to enter a page directly with the links of http://milestone3-lily.herokuapp.com/intents, 
+      http://milestone3-lily.herokuapp.com/add_intent, and http://milestone3-lily.herokuapp.com/log_out the page lands on the home page 
+      with a flash message "you are not logged in".
+
 ## Development Tools
 ### Languages
 1. Frontend languages are used through out the website.
