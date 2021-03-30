@@ -77,6 +77,7 @@ def logout():
         session.clear()
         flash("logged out")
         return redirect(url_for("home"))
+    
     flash('you are not logged in')
     return redirect(url_for("home"))
 
