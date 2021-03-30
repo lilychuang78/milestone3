@@ -73,9 +73,14 @@ def register():
 @app.route("/logout")
 def logout():
     """log out funtion"""
-    session.clear()
-    flash("logged out")
+    if "user" in session:
+        session.clear()
+        flash("logged out")
+        return redirect(url_for("home"))
+    flash('you are not logged in')
     return redirect(url_for("home"))
+
+
 
 @app.route("/intents")
 def intents():
