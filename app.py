@@ -152,4 +152,4 @@ def page_not_found(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=True) #change to False when submitting project
+        debug=False) #change to False when submitting project
